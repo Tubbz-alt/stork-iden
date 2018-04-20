@@ -1,0 +1,47 @@
+image: node:6.9.4
+
+options:
+  size: 1x
+
+definitions:
+  caches:
+    node-npm: ./node_modules
+
+pipelines:
+  default:
+    - step:
+        name: 'Default: @npm testing'
+        caches:
+          - node-npm
+        script:
+          - npm install
+          - npm test
+
+
+  branches:
+    release/*:
+      - step:
+          name: 'Release: @npm testing'
+          caches:
+            - node-npm
+          script:
+            - npm install
+            - npm run test
+
+
+    master:
+      - step:
+          name: 'Master: @npm testing'
+          caches:
+            - node-npm
+          script:
+            - npm install
+            - npm test
+      - step:
+          name: 'Master: npm publish'
+          caches:
+            - node-npm
+          script:
+            - npm install
+            - npm publish
+            

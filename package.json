@@ -1,0 +1,24 @@
+{
+  "name": "stork-iden",
+  "version": "1.6.5",
+  "description": "STORK - Identity System",
+  "main": "stork.js",
+  "scripts": {
+    "deploy": "npm publish",
+    "testwatch": "mocha **/*.test.js --watch --timeout 10000 ",
+    "test": "mocha **/*.test.js  --timeout 10000"
+  },
+  "keywords": [
+    "STORK",
+    "IDENTITY"
+  ],
+  "author": "Phisit Kannasut <phisit@readyplanet.com> (https://cv.otfuture.com)",
+  "license": "Copyright 2017",
+  "dependencies": {
+    "mocha": "^4.0.1",
+    "request": "^2.83.0"
+  },
+  "devDependencies": {
+    "tap": "^11.0.0"
+  }
+}
