@@ -15,6 +15,7 @@
   "author": "Phisit Kannasut <phisit@readyplanet.com> (https://cv.otfuture.com)",
   "license": "Copyright 2017",
   "dependencies": {
+    "axios": "^0.18.0",
     "mocha": "^4.0.1",
     "request": "^2.83.0"
   },

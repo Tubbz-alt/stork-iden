@@ -1,40 +1,3 @@
-# STORK-IDEN #
-
-_NPM Package for send any communication to customer_
-
-## _Versions_ ##
-
-### Released Notes ###
-
-- 2.0.0 - Major Change on backend system
-- 1.6.x - Support send to twilio, AIS BULK
-  - Send via twilio
-  - Send via AIS BULK
-  - Send via Line-noti
-- 1.5.x - update send by Unicode charactor
-
-## Functions ##
-
-- Send Short Message via twilio
-- Send Short Message via SIM CARD
-- Send Short Message via AIS BULK SMS
-- Send Short Message via Line-noti
-
-## Feature ##
-
-- Include Ratelimit for bulk sending
-
-### Example ###
-
-#### _*npm install*_ ####
-
-```bash
-npm i --save stork-iden
-```
-
-#### _*Javascript import*_ ####
-
-```javascript
 /*
   - Use this when import from npm package
   const STORK = require('stork-iden');
@@ -58,7 +21,8 @@ var tests = {
   sendSMS: false,
   OTPRequest: false,
   OTPVerify: false,
-  emailValidator: true
+  emailValidator: false,
+  lineNotiSend: true
 }
 
 // Example for Sending SMS vis this package
@@ -94,10 +58,10 @@ if (tests.emailValidator)
       console.log('emailValidator', response_emailValidator.data);
     })
     .catch(error => console.error('emailValidator error', error))
-```
 
------
-
-### Future functions ###
-
-- (none)
+if (tests.lineNotiSend)
+  stork.lineNotiSend(null,'Example send line noti')
+    .then(response_lineNotiSend => {
+      console.log('lineNotiSend', response_lineNotiSend.data);
+    })
+    .catch(error => console.error('lineNotiSend error', error))
