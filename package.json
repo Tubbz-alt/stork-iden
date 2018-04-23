@@ -1,6 +1,6 @@
 {
   "name": "stork-iden",
-  "version": "1.6.6",
+  "version": "2.0.0",
   "description": "STORK - Identity System",
   "main": "stork.js",
   "scripts": {
@@ -10,15 +10,19 @@
   },
   "keywords": [
     "STORK",
-    "IDENTITY"
+    "IDENTITY",
+    "TWILIO",
+    "SIMCARD",
+    "BULKSMS"
   ],
-  "author": "Phisit Kannasut <phisit@readyplanet.com> (https://cv.otfuture.com)",
-  "license": "Copyright 2017",
+  "author": "Solutions Team<solutions@readyplanet.com>",
+  "license": "Copyright 2017-2018",
   "dependencies": {
-    "mocha": "^4.0.1",
+    "axios": "^0.18.0",
     "request": "^2.83.0"
   },
   "devDependencies": {
+    "mocha": "^4.0.1",
     "tap": "^11.0.0"
   }
 }
