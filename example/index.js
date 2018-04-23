@@ -4,8 +4,8 @@
 */
 const STORK = require('./../stork');
 
-const PROJECT = 'STORK';
-const APIKEY = 'apikey';
+const PROJECT = process.env.PROJECT || 'STORK';
+const APIKEY = process.env.APITOKEN || 'apikey';
 const stork = new STORK(PROJECT, APIKEY);
 
 var appId = 'APP_ID';
@@ -13,12 +13,11 @@ var number = '+66614156789';
 var message = 'Send this message to mobile';
 var unicode = true;
 
-
 var tests = {
   sendSMS: false,
   OTPRequest: false,
   OTPVerify: false,
-  emailValidator: false,
+  emailValidator: true,
   lineNotiSend: false
 }
 
