@@ -30,3 +30,5 @@ build/Release
 functions/package-lock\.json
 
 package-lock\.json
+
+\.vscode/launch\.json
