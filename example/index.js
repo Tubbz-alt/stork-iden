@@ -2,9 +2,10 @@
   - Use this when import from npm package
   const STORK = require('stork-iden');
 */
+const STORK = require('./../stork');
+
 const PROJECT = 'STORK';
 const APIKEY = 'apikey';
-const STORK = require('./../stork');
 const stork = new STORK(PROJECT, APIKEY);
 
 var appId = 'APP_ID';
@@ -12,20 +13,19 @@ var number = '+66614156789';
 var message = 'Send this message to mobile';
 var unicode = true;
 
-var receiver = 'Receiver Name';
-var to = 'phisit@readyplanet.com';
-var validateUrl = 'https://auth.pointspot.co/validate/validatecodetobeverify';
-var lang = 'en'; // default
 
 var tests = {
   sendSMS: false,
   OTPRequest: false,
   OTPVerify: false,
   emailValidator: false,
-  lineNotiSend: true
+  lineNotiSend: false
 }
 
 // Example for Sending SMS vis this package
+/*
+
+*/
 if (tests.sendSMS)
   stork.sendSMS(number, message, appId, unicode)
     .then(res => console.log('sendSMS', res))
@@ -36,6 +36,13 @@ if (tests.sendSMS)
   Solutions
   1. OTP Request : System return 'reference code' and Send OTP code to mobile
   2. OTP Verify : System verify number reference and otp. if valid return 'true', else return 'false'
+
+  Parameter
+  - appId : Application Id
+  - number : Mobile number format +66614156789
+
+  Return
+  - refCode : reference code match with otp code (send to mobile)
 */
 if (tests.OTPRequest)
   stork.OTPRequest(appId, number)
@@ -52,6 +59,17 @@ if (tests.OTPVerify)
     .catch(error => console.error('OTPVerify error', error))
 
 // Example for Email Validator
+/*
+    Parameter
+    - receiver : Name of receiver
+    - to : email of receiver
+    - validateUrl : url for veridate
+    - lang : language of mail
+*/
+const receiver = 'Receiver Name';
+const to = 'phisit@readyplanet.com';
+const validateUrl = 'https://auth.pointspot.co/validate/validatecodetobeverify';
+const lang = 'en'; // default
 if (tests.emailValidator)
   stork.emailValidator(receiver, to, validateUrl, lang)
     .then(response_emailValidator => {
@@ -59,8 +77,16 @@ if (tests.emailValidator)
     })
     .catch(error => console.error('emailValidator error', error))
 
+// Example for Line Noti to me
+/*
+    Parameter
+    - lineToken : Token chat room on line notify, follow this toget token https://notify-bot.line.me/en/
+    - lineMessage : Message will be send to line chat room
+*/
+const lineToken = '';
+const lineMessage = 'Example send line noti';
 if (tests.lineNotiSend)
-  stork.lineNotiSend(null,'Example send line noti')
+  stork.lineNotiSend(lineToken, lineMessage)
     .then(response_lineNotiSend => {
       console.log('lineNotiSend', response_lineNotiSend.data);
     })
