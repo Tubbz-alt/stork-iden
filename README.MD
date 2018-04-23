@@ -6,6 +6,7 @@ _NPM Package for send any communication to customer_
 
 ### Released Notes ###
 
+- 2.1.0 - Add Phone Verification by inbound
 - 2.0.0 - Major Change on backend system
 - 1.6.x - Support send to twilio, AIS BULK
   - Send via twilio
@@ -19,6 +20,7 @@ _NPM Package for send any communication to customer_
 - Send Short Message via twilio
 - Send Short Message via SIM CARD
 - Send Short Message via Line-noti
+- Pone Verification by inbound
 
 ## Feature ##
 

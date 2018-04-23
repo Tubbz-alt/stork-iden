@@ -1,6 +1,6 @@
 {
   "name": "stork-iden",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "STORK - Identity System",
   "main": "stork.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "BULKSMS"
   ],
   "author": "Solutions Team<solutions@readyplanet.com>",
-  "license": "Copyright 2017-2018",
+  "license": "LIC 2018",
   "dependencies": {
     "axios": "^0.18.0",
     "request": "^2.83.0"
