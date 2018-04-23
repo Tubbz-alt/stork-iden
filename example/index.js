@@ -9,15 +9,19 @@ const APIKEY = process.env.APITOKEN || 'apikey';
 const stork = new STORK(PROJECT, APIKEY);
 
 var appId = 'APP_ID';
-var number = '+66614156789';
+var number = '+66636695587';
 var message = 'Send this message to mobile';
 var unicode = true;
+var sendSMS = false;
+var callbackUrl = 'https://storkgw.zense.online/alive'
 
 var tests = {
   sendSMS: false,
   OTPRequest: false,
   OTPVerify: false,
-  emailValidator: true,
+  PhoneRequest: false,
+  PhoneVerify: false,
+  emailValidator: false,
   lineNotiSend: false
 }
 
@@ -54,6 +58,32 @@ if (tests.OTPVerify)
   stork.OTPVerify(appId, number, response_OTPRequest.data.data.refCode, '')
     .then(response_OTPVerify => {
       console.log('OTPVerify', response_OTPVerify.data);
+    })
+    .catch(error => console.error('OTPVerify error', error))
+
+// Example for Phone Solutions
+/*
+  Solutions
+  1. Phone Request : Request for Phone verify
+  2. Phone Verify : for verify call-in
+
+  Parameter
+  - appId : Application Id
+  - number : Mobile number format +66614156789
+  - sendSMS : send SMS to remind call
+  - callbackUrl : url when phome call-in
+*/
+if (tests.PhoneRequest)
+  stork.PhoneRequest(appId, number, sendSMS, callbackUrl)
+    .then(response_PhoneRequest => {
+      console.log('PhoneRequest', response_PhoneRequest.data);
+    })
+    .catch(error => console.error('OTPRequest error', error))
+
+if (tests.PhoneVerify)
+  stork.PhoneVerify(appId, number)
+    .then(response_PhoneVerify => {
+      console.log('PhoneVerify', response_PhoneVerify.data);
     })
     .catch(error => console.error('OTPVerify error', error))
 
