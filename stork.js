@@ -20,6 +20,9 @@ STORK.prototype.sendSMS = require('./libs/sms').sendSMS;
 STORK.prototype.OTPRequest = require('./libs/otp').OTPRequest;
 STORK.prototype.OTPVerify = require('./libs/otp').OTPVerify;
 
+STORK.prototype.PhoneRequest = require('./libs/phone').PhoneRequest;
+STORK.prototype.PhoneVerify = require('./libs/phone').PhoneVerify;
+
 STORK.prototype.emailValidator = require('./libs/email').validator;
 
 STORK.prototype.lineNotiSend = require('./libs/line').sendNoti;
