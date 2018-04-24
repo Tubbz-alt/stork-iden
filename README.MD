@@ -2,6 +2,7 @@
 
 _NPM Package for send any communication to customer_
 
+[![Build Status](https://travis-ci.org/XeNoNZaa/node-datetime-thai.svg?branch=master)](https://travis-ci.org/XeNoNZaa/node-datetime-thai)
 [![BCH compliance](https://bettercodehub.com/edge/badge/XeNoNZaa/stork-iden?branch=master)](https://bettercodehub.com/)
 
 ## _Versions_ ##

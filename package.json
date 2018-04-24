@@ -6,7 +6,7 @@
   "scripts": {
     "deploy": "npm publish",
     "testwatch": "mocha **/*.test.js --watch --timeout 10000 ",
-    "test": "mocha **/*.test.js  --timeout 10000"
+    "test": "mocha **/*.test.js  --timeout 10000 -R mocha-lcov-reporter"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "mocha": "^4.0.1",
+    "mocha-lcov-reporter": "^1.3.0",
     "tap": "^11.0.0"
   }
 }
