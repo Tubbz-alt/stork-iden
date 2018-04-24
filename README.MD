@@ -6,6 +6,7 @@ _NPM Package for send any communication to customer_
 
 ### Released Notes ###
 
+- 2.1.1 - Edit READEME Example Script
 - 2.1.0 - Add Phone Verification by inbound
 - 2.0.0 - Major Change on backend system
 - 1.6.x - Support send to twilio, AIS BULK
@@ -69,7 +70,7 @@ var tests = {
 
 */
 if (tests.sendSMS)
-  stork.sendSMS(number, message, appId, unicode)
+  stork.sendSMS(number, message,appId,  unicode)
     .then(res => console.log('sendSMS', res))
     .catch(res => console.error('sendSMS error', res))
 
