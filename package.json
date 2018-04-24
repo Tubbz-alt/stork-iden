@@ -1,6 +1,6 @@
 {
   "name": "stork-iden",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "STORK - Identity System",
   "main": "stork.js",
   "scripts": {
@@ -8,6 +8,14 @@
     "testwatch": "mocha **/*.test.js --watch --timeout 10000 ",
     "test": "mocha **/*.test.js  --timeout 10000"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XeNoNZaa/stork-iden/"
+  },
+  "bugs": {
+    "url": "https://github.com/XeNoNZaa/stork-iden//issues"
+  },
+  "homepage": "https://github.com/XeNoNZaa",
   "keywords": [
     "STORK",
     "IDENTITY",
@@ -16,7 +24,7 @@
     "BULKSMS"
   ],
   "author": "Solutions Team<solutions@readyplanet.com>",
-  "license": "LIC 2018",
+  "license": "ISC 2018",
   "dependencies": {
     "axios": "^0.18.0",
     "request": "^2.83.0"
