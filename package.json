@@ -20,7 +20,7 @@
     "BULKSMS"
   ],
   "author": "Solutions Team<solutions@readyplanet.com>",
-  "license": "LIC 2018",
+  "license": "ISC 2018",
   "dependencies": {
     "axios": "^0.18.0",
     "request": "^2.83.0"
