@@ -24,6 +24,7 @@ STORK.prototype.PhoneRequest = require('./libs/phone').PhoneRequest;
 STORK.prototype.PhoneVerify = require('./libs/phone').PhoneVerify;
 
 STORK.prototype.emailValidator = require('./libs/email').validator;
+STORK.prototype.emailResetPassword = require('./libs/email').resetPassword;
 
 STORK.prototype.lineNotiSend = require('./libs/line').sendNoti;
 

@@ -22,6 +22,7 @@ var tests = {
   PhoneRequest: false,
   PhoneVerify: false,
   emailValidator: false,
+  emailResetPassword : false,
   lineNotiSend: false
 }
 
@@ -105,6 +106,23 @@ if (tests.emailValidator)
       console.log('emailValidator', response_emailValidator.data);
     })
     .catch(error => console.error('emailValidator error', error))
+    
+// Example for Email Reset Password
+/*
+    Parameter
+    - receiver : Name of receiver
+    - to : email of receiver
+    - validateUrl : url for reset password
+    - lang : language of mail
+*/
+const resetUrl = 'https://auth.pointspot.co/resetpassword/tokencode';
+if (tests.emailResetPassword)
+  stork.emailResetPassword(receiver, to, resetUrl, lang)
+    .then(response_emailResetPassword => {
+      console.log('emailResetPassword', response_emailResetPassword.data);
+    })
+    .catch(error => console.error('emailResetPassword error', error))
+
 
 // Example for Line Noti to me
 /*
