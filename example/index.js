@@ -4,8 +4,8 @@
 */
 const STORK = require('./../stork');
 
-const PROJECT = process.env.PROJECT || 'STORK';
-const APIKEY = process.env.APITOKEN || 'apikey';
+const PROJECT = process.env.PROJECT || 'PointSpot';
+const APIKEY = process.env.APITOKEN || '985cd42f0dffa83d05df3413334c7031918ffab5';
 const stork = new STORK(PROJECT, APIKEY);
 
 var appId = 'APP_ID';
@@ -14,24 +14,23 @@ var message = 'Send this message to mobile';
 var unicode = true;
 var sendSMS = false;
 var callbackUrl = 'https://storkgw.zense.online/alive'
+var refCode = 'fed';
+var otp = '66989';
 
 var tests = {
-  sendSMS: false,
+  sendSMS: true,
   OTPRequest: false,
   OTPVerify: false,
   PhoneRequest: false,
   PhoneVerify: false,
   emailValidator: false,
-  emailResetPassword : false,
+  emailResetPassword: false,
   lineNotiSend: false
 }
 
 // Example for Sending SMS vis this package
-/*
-
-*/
 if (tests.sendSMS)
-  stork.sendSMS(number, message, appId, unicode)
+  stork.sendSMS(appId, number, message, unicode)
     .then(res => console.log('sendSMS', res))
     .catch(res => console.error('sendSMS error', res))
 
@@ -56,7 +55,7 @@ if (tests.OTPRequest)
     .catch(error => console.error('OTPRequest error', error))
 
 if (tests.OTPVerify)
-  stork.OTPVerify(appId, number, response_OTPRequest.data.data.refCode, '')
+  stork.OTPVerify(appId, number, refCode, otp)
     .then(response_OTPVerify => {
       console.log('OTPVerify', response_OTPVerify.data);
     })
@@ -106,7 +105,7 @@ if (tests.emailValidator)
       console.log('emailValidator', response_emailValidator.data);
     })
     .catch(error => console.error('emailValidator error', error))
-    
+
 // Example for Email Reset Password
 /*
     Parameter
