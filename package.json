@@ -8,6 +8,10 @@
     "testwatch": "mocha **/*.test.js --watch --timeout 10000 ",
     "test": "mocha **/*.test.js  --timeout 10000"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XeNoNZaa/stork-iden/"
+  },
   "keywords": [
     "STORK",
     "IDENTITY",
