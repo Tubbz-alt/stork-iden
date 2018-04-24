@@ -6,6 +6,7 @@ _NPM Package for send any communication to customer_
 
 ### Released Notes ###
 
+- 2.2.0 - email Reset Password
 - 2.1.1 - Edit READEME Example Script
 - 2.1.0 - Add Phone Verification by inbound
 - 2.0.0 - Major Change on backend system
@@ -21,7 +22,7 @@ _NPM Package for send any communication to customer_
 - Send Short Message via twilio
 - Send Short Message via SIM CARD
 - Send Short Message via Line-noti
-- Pone Verification by inbound
+- Phone Verification by inbound
 
 ## Feature ##
 
@@ -62,6 +63,7 @@ var tests = {
   PhoneRequest: false,
   PhoneVerify: false,
   emailValidator: false,
+  emailResetPassword : false,
   lineNotiSend: false
 }
 
@@ -145,6 +147,22 @@ if (tests.emailValidator)
       console.log('emailValidator', response_emailValidator.data);
     })
     .catch(error => console.error('emailValidator error', error))
+
+// Example for Email Reset Password
+/*
+    Parameter
+    - receiver : Name of receiver
+    - to : email of receiver
+    - validateUrl : url for reset password
+    - lang : language of mail
+*/
+const resetUrl = 'https://auth.pointspot.co/resetpassword/tokencode';
+if (tests.emailResetPassword)
+  stork.emailResetPassword(receiver, to, resetUrl, lang)
+    .then(response_emailResetPassword => {
+      console.log('emailResetPassword', response_emailResetPassword.data);
+    })
+    .catch(error => console.error('emailResetPassword error', error))
 
 // Example for Line Noti to me
 /*
