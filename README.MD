@@ -2,6 +2,8 @@
 
 _NPM Package for send any communication to customer_
 
+[![BCH compliance](https://bettercodehub.com/edge/badge/XeNoNZaa/stork-iden?branch=master)](https://bettercodehub.com/)
+
 ## _Versions_ ##
 
 ### Released Notes ###
