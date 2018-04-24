@@ -74,7 +74,7 @@ var tests = {
 
 */
 if (tests.sendSMS)
-  stork.sendSMS(number, message,appId,  unicode)
+  stork.sendSMS(appId, number, message, unicode)
     .then(res => console.log('sendSMS', res))
     .catch(res => console.error('sendSMS error', res))
 
