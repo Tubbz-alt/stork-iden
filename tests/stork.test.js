@@ -8,7 +8,7 @@ describe('STORK NPM', function() {
       assert.equal(typeof stork, 'object');
     });
     it('new constructor get hostname', function() {
-      assert.equal(stork.HOSTNAME, 'us-central1-rp-sms-gateway.cloudfunctions.net');
+      assert.equal(stork.HOSTNAME, 'https://storkgw.zense.online');
     });
     it('new constructor get hostname port', function() {
       assert.equal(stork.PORT, 443);

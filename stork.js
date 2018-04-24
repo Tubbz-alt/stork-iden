@@ -8,7 +8,7 @@ var STORK = function (project, token, debug) {
   this.HOSTNAME = 'https://storkgw.zense.online';
   this.PORT = 443;
   this.AUTH = 'Bearer ' + token;
-  this.project_id = project;
+  this.project_id = project || '';
   this.isdebug = debug || false;
   this.DEBUG = this.isdebug ? console.log : function () { };
 
