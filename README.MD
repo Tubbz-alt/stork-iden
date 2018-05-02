@@ -9,6 +9,7 @@ _NPM Package for send any communication to customer_
 
 ### Released Notes ###
 
+- 2.3.0 - email invitation, change permission
 - 2.2.0 - email Reset Password
 - 2.1.1 - Edit READEME Example Script
 - 2.1.0 - Add Phone Verification by inbound
@@ -46,7 +47,7 @@ npm i --save stork-iden
   - Use this when import from npm package
   const STORK = require('stork-iden');
 */
-const STORK = require('./../stork');
+const STORK = require('stork-iden');
 
 const PROJECT = process.env.PROJECT || 'STORK';
 const APIKEY = process.env.APITOKEN || 'apikey';
@@ -166,6 +167,46 @@ if (tests.emailResetPassword)
       console.log('emailResetPassword', response_emailResetPassword.data);
     })
     .catch(error => console.error('emailResetPassword error', error))
+
+// Example for Email Invitation
+/*
+    Parameter
+    - receiver : Name of receiver
+    - to : email of receiver
+    - emailFrom : Invitation from name
+    - inviteUrl : url for reset password
+    - lang : language of mail
+*/
+const emailFrom = 'Administrator';
+const inviteUrl = 'https://pointspot.co/invite/tokencode';
+if (tests.emailInvitation)
+  stork.invite(receiver, to, emailFrom, inviteUrl, lang)
+    .then(response_emailInvitation => {
+      console.log('emailInvitation', response_emailInvitation.data);
+    })
+    .catch(error => console.error('emailInvitation error', error))
+
+// Example for Email change Permission
+/*
+    Parameter
+    - receiver : Name of receiver
+    - to : email of receiver
+    - emailFrom : Invitation from name
+    - linkUrl : url for reset password
+    - permissionFrom : before permission
+    - permissionTo : after permission
+    - lang : language of mail
+*/
+
+const linkUrl = 'https://pointspot.co';
+const permissionFrom = 'Editor';
+const permissionTo = 'Authorize'
+if (tests.emailChangePermission)
+  stork.changePermission(receiver, to, emailFrom, linkUrl, permissionFrom, permissionTo, lang)
+    .then(response_emailChangePermission => {
+      console.log('emailChangePermission', response_emailChangePermission.data);
+    })
+    .catch(error => console.error('emailChangePermission error', error))
 
 // Example for Line Noti to me
 /*
