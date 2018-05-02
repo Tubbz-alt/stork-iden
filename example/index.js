@@ -4,8 +4,8 @@
 */
 const STORK = require('./../stork');
 
-const PROJECT = process.env.PROJECT || 'PointSpot';
-const APIKEY = process.env.APITOKEN || '985cd42f0dffa83d05df3413334c7031918ffab5';
+const PROJECT = process.env.PROJECT || '';
+const APIKEY = process.env.APITOKEN || '';
 const stork = new STORK(PROJECT, APIKEY);
 
 var appId = 'APP_ID';
@@ -18,13 +18,15 @@ var refCode = 'fed';
 var otp = '66989';
 
 var tests = {
-  sendSMS: true,
+  sendSMS: false,
   OTPRequest: false,
   OTPVerify: false,
   PhoneRequest: false,
   PhoneVerify: false,
   emailValidator: false,
   emailResetPassword: false,
+  emailInvitation: false,
+  emailChangePermission: true,
   lineNotiSend: false
 }
 
@@ -121,6 +123,46 @@ if (tests.emailResetPassword)
       console.log('emailResetPassword', response_emailResetPassword.data);
     })
     .catch(error => console.error('emailResetPassword error', error))
+
+// Example for Email Invitation
+/*
+    Parameter
+    - receiver : Name of receiver
+    - to : email of receiver
+    - emailFrom : Invitation from name
+    - inviteUrl : url for reset password
+    - lang : language of mail
+*/
+const emailFrom = 'Administrator';
+const inviteUrl = 'https://pointspot.co/invite/tokencode';
+if (tests.emailInvitation)
+  stork.invite(receiver, to, emailFrom, inviteUrl, lang)
+    .then(response_emailInvitation => {
+      console.log('emailInvitation', response_emailInvitation.data);
+    })
+    .catch(error => console.error('emailInvitation error', error))
+
+// Example for Email change Permission
+/*
+    Parameter
+    - receiver : Name of receiver
+    - to : email of receiver
+    - emailFrom : Invitation from name
+    - linkUrl : url for reset password
+    - permissionFrom : before permission
+    - permissionTo : after permission
+    - lang : language of mail
+*/
+
+const linkUrl = 'https://pointspot.co';
+const permissionFrom = 'Editor';
+const permissionTo = 'Authorize'
+if (tests.emailChangePermission)
+  stork.changePermission(receiver, to, emailFrom, linkUrl, permissionFrom, permissionTo, lang)
+    .then(response_emailChangePermission => {
+      console.log('emailChangePermission', response_emailChangePermission.data);
+    })
+    .catch(error => console.error('emailChangePermission error', error))
 
 
 // Example for Line Noti to me
