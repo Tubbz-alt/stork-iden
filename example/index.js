@@ -4,8 +4,8 @@
 */
 const STORK = require('./../stork');
 
-const PROJECT = process.env.PROJECT || 'PointSpot';
-const APIKEY = process.env.APITOKEN || '985cd42f0dffa83d05df3413334c7031918ffab5';
+const PROJECT = process.env.PROJECT || '';
+const APIKEY = process.env.APITOKEN || '';
 const stork = new STORK(PROJECT, APIKEY);
 
 var appId = 'APP_ID';
