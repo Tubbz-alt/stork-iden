@@ -42,6 +42,5 @@ pipelines:
             - node-npm
           script:
             - npm install
-            - npm version patch
             - npm publish
             
