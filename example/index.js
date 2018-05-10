@@ -2,10 +2,10 @@
   - Use this when import from npm package
   const STORK = require('stork-iden');
 */
-const STORK = require('./../stork');
+const STORK = require('./..');
 
-const PROJECT = process.env.PROJECT || '';
-const APIKEY = process.env.APITOKEN || '';
+const PROJECT = process.env.PROJECT || 'STORK';
+const APIKEY = process.env.APITOKEN || 'APIKEY';
 const stork = new STORK(PROJECT, APIKEY);
 
 var appId = 'APP_ID';
@@ -26,7 +26,7 @@ var tests = {
   emailValidator: false,
   emailResetPassword: false,
   emailInvitation: false,
-  emailChangePermission: true,
+  emailChangePermission: false,
   lineNotiSend: false
 }
 
