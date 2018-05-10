@@ -1,14 +1,14 @@
 {
   "name": "stork-iden",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "description": "STORK - Identity System",
   "main": "stork.js",
   "scripts": {
     "start": "npm run test:watch",
     "deploy": "npm version patch && npm publish && npm run push",
-    "push" : "npm run push:bitbucket && npm run push:github",
-    "push:bitbucket" : "git push origin master",
-    "push:github" : "git push github master",
+    "push": "npm run push:bitbucket && npm run push:github",
+    "push:bitbucket": "git push origin master",
+    "push:github": "git push github master",
     "test": "mocha --recursive ./tests  --timeout 10000",
     "test:watch": "mocha **/*.test.js --watch --timeout 10000 "
   },
