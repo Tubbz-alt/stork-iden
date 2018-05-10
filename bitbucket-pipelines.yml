@@ -36,15 +36,15 @@ pipelines:
           script:
             - npm install
             - npm test
-      - step:
-          name: 'Master: npm publish'
-          caches:
-            - node-npm
-          script:
-            - npm install
-            - git config --global user.email "phisit@readyplanet.com"
-            - git config --global user.name "Phisit Kannasut@AUTO"
-            - npm version patch
-            - git push
-            - npm publish
+      # - step:
+      #     name: 'Master: npm publish'
+      #     caches:
+      #       - node-npm
+      #     script:
+      #       - npm install
+      #       - git config --global user.email "phisit@readyplanet.com"
+      #       - git config --global user.name "Phisit Kannasut@AUTO"
+      #       - npm version patch
+      #       - git push
+      #       - npm publish
             
