@@ -4,9 +4,10 @@
   "description": "STORK - Identity System",
   "main": "stork.js",
   "scripts": {
+    "start": "npm run test:watch",
     "deploy": "npm publish",
-    "testwatch": "mocha **/*.test.js --watch --timeout 10000 ",
-    "test": "mocha --recursive ./tests  --timeout 10000"
+    "test": "mocha --recursive ./tests  --timeout 10000",
+    "test:watch": "mocha **/*.test.js --watch --timeout 10000 "
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,6 @@
   },
   "devDependencies": {
     "mocha": "^4.1.0",
-    "tap": "^11.1.4"
+    "tap": "^11.1.5"
   }
 }

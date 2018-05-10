@@ -26,8 +26,7 @@ pipelines:
             - node-npm
           script:
             - npm install
-            - npm run test
-
+            - npm test
 
     master:
       - step:
@@ -43,5 +42,6 @@ pipelines:
             - node-npm
           script:
             - npm install
+            - npm version patch
             - npm publish
             
