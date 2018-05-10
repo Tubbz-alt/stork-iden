@@ -45,7 +45,6 @@ pipelines:
             - git config --global user.email "phisit@readyplanet.com"
             - git config --global user.name "Phisit Kannasut@AUTO"
             - npm version patch
-            - git commit . -m 'patch version'
             - git push
             - npm publish
             
