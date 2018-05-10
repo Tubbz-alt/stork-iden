@@ -36,11 +36,10 @@ pipelines:
           script:
             - npm install
             - npm test
-      - step:
-          name: 'Master: npm publish'
-          caches:
-            - node-npm
-          script:
-            - npm install
-            - npm publish
+      # - step:
+      #     name: 'Master: npm publish'
+      #     caches:
+      #       - node-npm
+      #     script:
+      #       - npm install
             
