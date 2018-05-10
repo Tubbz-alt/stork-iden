@@ -5,7 +5,7 @@
   "main": "stork.js",
   "scripts": {
     "start": "npm run test:watch",
-    "deploy": "npm publish",
+    "deploy": "npm version patch && npm publish",
     "test": "mocha --recursive ./tests  --timeout 10000",
     "test:watch": "mocha **/*.test.js --watch --timeout 10000 "
   },
