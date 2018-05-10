@@ -135,8 +135,9 @@ if (tests.emailResetPassword)
 */
 const emailFrom = 'Administrator';
 const inviteUrl = 'https://pointspot.co/invite/tokencode';
+const businessName = 'STORK';
 if (tests.emailInvitation)
-  stork.invite(receiver, to, emailFrom, inviteUrl, lang)
+  stork.invite(receiver, to, emailFrom, inviteUrl, businessName, lang)
     .then(response_emailInvitation => {
       console.log('emailInvitation', response_emailInvitation.data);
     })
@@ -156,9 +157,9 @@ if (tests.emailInvitation)
 
 const linkUrl = 'https://pointspot.co';
 const permissionFrom = 'Editor';
-const permissionTo = 'Authorize'
+const permissionTo = 'Authorize';
 if (tests.emailChangePermission)
-  stork.changePermission(receiver, to, emailFrom, linkUrl, permissionFrom, permissionTo, lang)
+  stork.changePermission(receiver, to, emailFrom, linkUrl, permissionFrom, permissionTo, businessName, lang)
     .then(response_emailChangePermission => {
       console.log('emailChangePermission', response_emailChangePermission.data);
     })

@@ -9,14 +9,14 @@ module.exports = {
     return require('./axiosRequest')(this.project_id, this.AUTH, this.HOSTNAME + method,
       { receiver, to, resetUrl, lang });
   },
-  invite: function (receiver, to, emailFrom, linkUrl, lang) {
+  invite: function (receiver, to, emailFrom, linkUrl, businessName, lang) {
     var method = '/apis/email/invite';
     return require('./axiosRequest')(this.project_id, this.AUTH, this.HOSTNAME + method,
-      { receiver, to, emailFrom, linkUrl, lang });
+      { receiver, to, emailFrom, linkUrl, businessName, lang });
   },
-  changePermission: function (receiver, to, emailFrom, linkUrl, permissionFrom, permissionTo, lang) {
+  changePermission: function (receiver, to, emailFrom, linkUrl, permissionFrom, permissionTo, businessName, lang) {
     var method = '/apis/email/changePermission';
     return require('./axiosRequest')(this.project_id, this.AUTH, this.HOSTNAME + method,
-      { receiver, to, emailFrom, linkUrl, permissionFrom, permissionTo, lang });
+      { receiver, to, emailFrom, linkUrl, permissionFrom, permissionTo, businessName, lang });
   }
 }

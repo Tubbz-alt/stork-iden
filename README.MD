@@ -59,6 +59,8 @@ var message = 'Send this message to mobile';
 var unicode = true;
 var sendSMS = false;
 var callbackUrl = 'https://storkgw.zense.online/alive'
+var refCode = 'fed';
+var otp = '66989';
 
 var tests = {
   sendSMS: false,
@@ -67,14 +69,13 @@ var tests = {
   PhoneRequest: false,
   PhoneVerify: false,
   emailValidator: false,
-  emailResetPassword : false,
+  emailResetPassword: false,
+  emailInvitation: false,
+  emailChangePermission: true,
   lineNotiSend: false
 }
 
 // Example for Sending SMS vis this package
-/*
-
-*/
 if (tests.sendSMS)
   stork.sendSMS(appId, number, message, unicode)
     .then(res => console.log('sendSMS', res))
@@ -101,7 +102,7 @@ if (tests.OTPRequest)
     .catch(error => console.error('OTPRequest error', error))
 
 if (tests.OTPVerify)
-  stork.OTPVerify(appId, number, response_OTPRequest.data.data.refCode, '')
+  stork.OTPVerify(appId, number, refCode, otp)
     .then(response_OTPVerify => {
       console.log('OTPVerify', response_OTPVerify.data);
     })
@@ -179,8 +180,9 @@ if (tests.emailResetPassword)
 */
 const emailFrom = 'Administrator';
 const inviteUrl = 'https://pointspot.co/invite/tokencode';
+const businessName = 'STORK';
 if (tests.emailInvitation)
-  stork.invite(receiver, to, emailFrom, inviteUrl, lang)
+  stork.invite(receiver, to, emailFrom, inviteUrl, businessName, lang)
     .then(response_emailInvitation => {
       console.log('emailInvitation', response_emailInvitation.data);
     })
@@ -200,13 +202,14 @@ if (tests.emailInvitation)
 
 const linkUrl = 'https://pointspot.co';
 const permissionFrom = 'Editor';
-const permissionTo = 'Authorize'
+const permissionTo = 'Authorize';
 if (tests.emailChangePermission)
-  stork.changePermission(receiver, to, emailFrom, linkUrl, permissionFrom, permissionTo, lang)
+  stork.changePermission(receiver, to, emailFrom, linkUrl, permissionFrom, permissionTo, businessName, lang)
     .then(response_emailChangePermission => {
       console.log('emailChangePermission', response_emailChangePermission.data);
     })
     .catch(error => console.error('emailChangePermission error', error))
+
 
 // Example for Line Noti to me
 /*
