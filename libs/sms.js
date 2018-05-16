@@ -1,4 +1,3 @@
-const axios = require('axios');
 
 module.exports = {
   sendSMS: function (appId, number, message, unicode) {
