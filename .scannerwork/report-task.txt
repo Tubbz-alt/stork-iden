@@ -1,7 +1,0 @@
-organization=phisit-bitbucket
-projectKey=stork-npm
-serverUrl=https://sonarcloud.io
-serverVersion=7.2.0.12953
-dashboardUrl=https://sonarcloud.io/dashboard/index/stork-npm
-ceTaskId=AWPeXmvh6E79xp0Px0Il
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWPeXmvh6E79xp0Px0Il

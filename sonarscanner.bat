@@ -1,1 +1,0 @@
-sonar-scanner.bat -Dsonar.projectKey=stork-npm -Dsonar.organization=phisit-bitbucket -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=b857f83568e25ecae192997c65a5b9bb4e5cb1cf
