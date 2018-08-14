@@ -18,5 +18,10 @@ module.exports = {
     var method = '/apis/email/changePermission';
     return require('./axiosRequest')(this.project_id, this.AUTH, this.HOSTNAME + method,
       { receiver, to, emailFrom, linkUrl, permissionFrom, permissionTo, businessName, lang });
+  },
+  emailValidate: function (email) {
+    var method = '/apis/email/emailValidate';
+    return require('./axiosRequest')(this.project_id, this.AUTH, this.HOSTNAME + method,
+      { email });
   }
 }
