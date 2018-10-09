@@ -23,5 +23,10 @@ module.exports = {
     var method = '/apis/email/emailValidate';
     return require('./axiosRequest')(this.project_id, this.AUTH, this.HOSTNAME + method,
       { email });
-  }
+  },
+  businessConfirm: function (receiver, to, project_id, linkUrl, businessName, status, lang) {
+    var method = '/apis/email/businessConfirm';
+    return require('./axiosRequest')(this.project_id, this.AUTH, this.HOSTNAME + method,
+      { receiver, to, project_id, linkUrl, businessName, status, lang });
+  },
 }
