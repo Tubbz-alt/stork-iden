@@ -1,0 +1,12 @@
+{
+  "sendSMS": false,
+  "OTPRequest": false,
+  "OTPVerify": false,
+  "PhoneRequest": false,
+  "PhoneVerify": false,
+  "emailValidator": false,
+  "emailResetPassword": false,
+  "emailInvitation": false,
+  "emailChangePermission": false,
+  "lineNotiSend": false
+}
