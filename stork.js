@@ -29,6 +29,7 @@ STORK.prototype.invite = require('./libs/email').invite;
 STORK.prototype.changePermission = require('./libs/email').changePermission;
 STORK.prototype.emailValidate = require('./libs/email').emailValidate;
 STORK.prototype.businessConfirm = require('./libs/email').businessConfirm;
+STORK.prototype.sendDailySummary = require('./libs/email').sendDailySummary;
 
 STORK.prototype.lineNotiSend = require('./libs/line').sendNoti;
 
