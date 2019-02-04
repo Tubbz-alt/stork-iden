@@ -30,9 +30,9 @@ module.exports = {
       { receiver, to, project_id, linkUrl, businessName, status, lang });
   },
   
-  sendDailySummary: function (receiver, to, linkUrl, businessName, lang, reportDataDate, data) {
+  sendDailySummary: function (receiver, to, linkUrl, unsubscribeUrl, businessName, lang, reportDataDate, data) {
     var method = '/apis/email/dailymail_1';
     return require('./axiosRequest')(this.project_id, this.AUTH, this.HOSTNAME + method,
-      { receiver, to, linkUrl, businessName, lang, reportDataDate, data });
+      { receiver, to, linkUrl, unsubscribeUrl, businessName, lang, reportDataDate, data });
   },
 }
