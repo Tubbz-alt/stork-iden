@@ -1,6 +1,6 @@
 {
   "name": "stork-iden",
-  "version": "2.8.1",
+  "version": "2.8.2",
   "description": "STORK - Identity System",
   "main": "stork.js",
   "scripts": {
