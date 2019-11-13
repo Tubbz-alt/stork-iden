@@ -15,7 +15,8 @@ var STORK = function (project, token, debug) {
   return this;
 };
 
-STORK.prototype.sendSMS = require('./libs/sms').sendSMS;
+STORK.prototype.sendSMS = require('./libs/sms').sendSMSBasic;
+STORK.prototype.sendSMSAdvance = require('./libs/sms').sendSMS;
 
 /**
  * @method OTPRequest สำหรับการขอรหัส OTP
