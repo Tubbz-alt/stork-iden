@@ -1,8 +1,8 @@
 module.exports = {
-  OTPRequest: function (appId, number) {
+  OTPRequest: function (appId, number, lang) {
     var method = '/apis/otp/request';
     return require('./axiosRequest')(this.project_id, this.AUTH, this.HOSTNAME + method,
-      { appId, number })
+      { appId, number, lang })
   },
 
   OTPVerify: function (appId, number, refCode, otp) {
