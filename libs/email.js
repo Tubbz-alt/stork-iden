@@ -35,4 +35,10 @@ module.exports = {
     return require('./axiosRequest')(this.project_id, this.AUTH, this.HOSTNAME + method,
       { receiver, to, linkUrl, unsubscribeUrl, businessName, lang, reportDataDate, data });
   },
+
+  reviewMessage: function (receiver, to, linkUrl, unsubscribeUrl, businessName, lang, data) {
+    var method = '/apis/email/review/message';
+    return require('./axiosRequest')(this.project_id, this.AUTH, this.HOSTNAME + method,
+      { receiver, to, linkUrl, unsubscribeUrl, businessName, lang, data });
+  },
 }
